@@ -1,10 +1,10 @@
 #all: hw8 shell
-all: madRace utAtom utVariable utScanner utIterator hw8 shell
+all: utAtom utVariable utScanner utIterator hw8 shell
 
-madRace: mainMadRace.o
-	g++ -o madRace mainMadRace.o -lgtest -lpthread
-mainMadRace.o: mainMadRace.cpp madRace.h utMadRace.h
-	g++ -std=c++14 -c mainMadRace.cpp
+#madRace: mainMadRace.o
+#	g++ -o madRace mainMadRace.o -lgtest -lpthread
+#mainMadRace.o: mainMadRace.cpp madRace.h utMadRace.h
+#	g++ -std=c++14 -c mainMadRace.cpp
 
 
 utAtom: mainAtom.o list.o atom.o struct.o
