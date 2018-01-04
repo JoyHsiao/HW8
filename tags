@@ -1,0 +1,286 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ATOM	global.h	/^const int ATOM = 257;$/;"	v
+ATOMSC	global.h	/^const int ATOMSC = 258;$/;"	v
+ATOM_H	atom.h	2;"	d
+Atom	atom.h	/^  Atom(string s):Term(s) {}$/;"	f	class:Atom
+Atom	atom.h	/^class Atom : public Term{$/;"	c
+ConjExp	exp.h	/^  ConjExp(Exp *left, Exp *right) : _left(left), _right(right) {$/;"	f	class:ConjExp
+ConjExp	exp.h	/^class ConjExp : public Exp {$/;"	c
+DisjExp	exp.h	/^  DisjExp(Exp *left, Exp *right) : _left(left), _right(right) {$/;"	f	class:DisjExp
+DisjExp	exp.h	/^class DisjExp : public Exp {$/;"	c
+EOS	global.h	/^const int EOS = '\\0';$/;"	v
+EXCEPTION_H	exception.h	2;"	d
+EXPRESSION_H	expression.h	2;"	d
+EXP_H	exp.h	2;"	d
+Exp	exp.h	/^class Exp {$/;"	c
+GLOBAL_H	global.h	2;"	d
+ITERATOR_H	iterator.h	2;"	d
+Iterator	iterator.h	/^class Iterator {$/;"	c
+LIST_H	list.h	2;"	d
+List	list.h	/^  List (vector<Term *> const & elements): Struct(Atom("."), {elements[0], createTail(elements)}){$/;"	f	class:List
+List	list.h	/^  List(Term * head, Term* tail):Struct(Atom("."), { head, tail }) {$/;"	f	class:List
+List	list.h	/^class List : public Struct {$/;"	c
+ListIterator	iterator.h	/^  ListIterator(List *list): _index(0), _list(list) {}$/;"	f	class:ListIterator
+ListIterator	iterator.h	/^class ListIterator :public Iterator {$/;"	c
+MADRACE_H	madRace.h	2;"	d
+MadBike	madRace.h	/^  MadBike (int iniSpeed, int inc, int maxSpeed): _speed(iniSpeed), _inc(inc), _maxSpeed(maxSpeed){}$/;"	f	class:MadBike
+MadBike	madRace.h	/^class MadBike {$/;"	c
+MadCar	madRace.h	/^  MadCar (int iniSpeed): _speed(iniSpeed){}$/;"	f	class:MadCar
+MadCar	madRace.h	/^class MadCar {$/;"	c
+MatchExp	exp.h	/^  MatchExp(Term* left, Term* right): _left(left), _right(right){$/;"	f	class:MatchExp
+MatchExp	exp.h	/^class MatchExp : public Exp {$/;"	c
+NONE	global.h	/^const int NONE = -1; \/\/ no tokenValue$/;"	v
+NUMBER	global.h	/^const int NUMBER = 256;$/;"	v
+NullIterator	iterator.h	/^  NullIterator(Term *n){}$/;"	f	class:NullIterator
+NullIterator	iterator.h	/^class NullIterator :public Iterator{$/;"	c
+Number	atom.h	/^  Number(double db){$/;"	f	class:Number
+Number	atom.h	/^class Number : public Term{$/;"	c
+PARSER_H	parser.h	2;"	d
+Parser	parser.h	/^  Parser(Scanner scanner) : _scanner(scanner), _terms() {}$/;"	f	class:Parser
+Parser	parser.h	/^class Parser{$/;"	c
+ParserTest	utParser.h	/^class ParserTest : public ::testing::Test {$/;"	c
+SCANNER_H	scanner.h	2;"	d
+STRUCT_H	struct.h	2;"	d
+Scanner	scanner.h	/^  Scanner (string in=""):buffer(in), pos(0), _tokenValue(NONE){}$/;"	f	class:Scanner
+Scanner	scanner.h	/^class Scanner {$/;"	c
+ScannerTest	utScanner.h	/^class ScannerTest : public ::testing::Test {$/;"	c
+SetUp	utParser.h	/^  void SetUp() {$/;"	f	class:ParserTest
+SetUp	utScanner.h	/^  void SetUp() {$/;"	f	class:ScannerTest
+Struct	struct.h	/^  Struct(Atom name, std::vector<Term *> args): _name(name), _args(args){$/;"	f	class:Struct
+Struct	struct.h	/^class Struct: public Term {$/;"	c
+StructIterator	iterator.h	/^  StructIterator(Struct *s): _index(0), _s(s) {}$/;"	f	class:StructIterator
+StructIterator	iterator.h	/^class StructIterator :public Iterator {$/;"	c
+TEST	exception.h	/^TEST(Shell, exceptionMissingPeriodToken) {$/;"	f
+TEST	exception.h	/^TEST(Shell, exception_OnlyVariable) {$/;"	f
+TEST	exception.h	/^TEST(Shell, exception_UnbalancedOperator1) {$/;"	f
+TEST	exception.h	/^TEST(Shell, exception_UnbalancedOperator2) {$/;"	f
+TEST	exception.h	/^TEST(Shell, exception_UnexpectedConjTokenBeforePeriod1) {$/;"	f
+TEST	exception.h	/^TEST(Shell, exception_UnexpectedConjTokenBeforePeriod2) {$/;"	f
+TEST	exception.h	/^TEST(Shell, exception_UnexpectedDisjTokenBeforePeriod) {$/;"	f
+TEST	expression.h	/^TEST(Shell, atomMatchAtomFail) {$/;"	f
+TEST	expression.h	/^TEST(Shell, conjunctionMatching_diffExp) {$/;"	f
+TEST	expression.h	/^TEST(Shell, conjunctionMatching_duplicateExp) {$/;"	f
+TEST	expression.h	/^TEST(Shell, conjunctionMatching_expAndtrue) {$/;"	f
+TEST	expression.h	/^TEST(Shell, conjunctionMatching_false) {$/;"	f
+TEST	expression.h	/^TEST(Shell, conjunctionMatching_falseAndfalse) {$/;"	f
+TEST	expression.h	/^TEST(Shell, conjunctionMatching_falseAndtrue) {$/;"	f
+TEST	expression.h	/^TEST(Shell, conjunctionMatching_sameExp) {$/;"	f
+TEST	expression.h	/^TEST(Shell, conjunctionMatching_true) {$/;"	f
+TEST	expression.h	/^TEST(Shell, conjunctionMatching_trueAndExp) {$/;"	f
+TEST	expression.h	/^TEST(Shell, conjunctionMatching_trueAndfalse) {$/;"	f
+TEST	expression.h	/^TEST(Shell, disjunctionMatching1) {$/;"	f
+TEST	expression.h	/^TEST(Shell, disjunctionMatching2) {$/;"	f
+TEST	expression.h	/^TEST(Shell, varMachingListThatIncludeVar) {$/;"	f
+TEST	expression.h	/^TEST(Shell, varMachingStructThatIncludeVar) {$/;"	f
+TEST	expression.h	/^TEST(Shell, varMatchAtomSuc) {$/;"	f
+TEST	expression.h	/^TEST(Shell, varMatchItself) {$/;"	f
+TEST	expression.h	/^TEST(Shell, varMatchList) {$/;"	f
+TEST	expression.h	/^TEST(Shell, varMatchStruct) {$/;"	f
+TEST	utAtom.h	/^TEST(Atom, Virtual)$/;"	f
+TEST	utAtom.h	/^TEST(Atom, first) {$/;"	f
+TEST	utAtom.h	/^TEST(Atom, match_tom_and_jerry) {$/;"	f
+TEST	utAtom.h	/^TEST(Atom, tom) {$/;"	f
+TEST	utAtom.h	/^TEST(Atom, value)$/;"	f
+TEST	utExp.h	/^TEST(Exp, buildConjunctionExp) {$/;"	f
+TEST	utExp.h	/^TEST(Exp, buildConjunctionExpFail) {$/;"	f
+TEST	utExp.h	/^TEST(Exp, buildDisjunctionExp) {$/;"	f
+TEST	utExp.h	/^TEST(Exp, buildDisjunctionExpFail) {$/;"	f
+TEST	utExp.h	/^TEST(Exp, buildDisjunctionExpSuc) {$/;"	f
+TEST	utExp.h	/^TEST(Exp, buildExp) {$/;"	f
+TEST	utExp.h	/^TEST(Exp, matchExp) {$/;"	f
+TEST	utIterator.h	/^TEST(iterator, NullIterator){$/;"	f
+TEST	utIterator.h	/^TEST(iterator, first) {$/;"	f
+TEST	utIterator.h	/^TEST(iterator, firstList) {$/;"	f
+TEST	utList.h	/^TEST(List, match){$/;"	f
+TEST	utList.h	/^TEST(List, symbol){$/;"	f
+TEST	utList.h	/^TEST(List, vectorInit){$/;"	f
+TEST	utMadRace.h	/^TEST(madRace, bike) {$/;"	f
+TEST	utMadRace.h	/^TEST(madRace, car) {$/;"	f
+TEST	utStruct.h	/^TEST(Struct, hobby)$/;"	f
+TEST	utStruct.h	/^TEST(Struct, match1)$/;"	f
+TEST	utStruct.h	/^TEST(Struct, match2){$/;"	f
+TEST	utStruct.h	/^TEST(Struct, match3){$/;"	f
+TEST	utStruct.h	/^TEST(Struct, match4)$/;"	f
+TEST	utStruct.h	/^TEST(Struct, match5)$/;"	f
+TEST	utStruct.h	/^TEST(Struct, matchWithVar)$/;"	f
+TEST	utStruct.h	/^TEST(Struct, nested_struct1)$/;"	f
+TEST	utStruct.h	/^TEST(Struct, nested_struct2)$/;"	f
+TEST	utStruct.h	/^TEST(Struct, nested_struct3)$/;"	f
+TEST	utStruct.h	/^TEST(Struct, nested_struct4)$/;"	f
+TEST	utStruct.h	/^TEST(Struct, nested_struct_and_multiVariable)$/;"	f
+TEST	utStruct.h	/^TEST(Struct, var)$/;"	f
+TEST	utStruct.h	/^TEST(Struct, var_match_atom)$/;"	f
+TEST	utStruct.h	/^TEST(Struct, var_match_num)$/;"	f
+TEST	utStruct.h	/^TEST(Struct, var_match_struct)$/;"	f
+TEST	utStruct.h	/^TEST(Struct,symbol)$/;"	f
+TEST	utVariable.h	/^TEST (Variable, Struct1) {$/;"	f
+TEST	utVariable.h	/^TEST (Variable, Struct2) {$/;"	f
+TEST	utVariable.h	/^TEST (Variable, num1_to_varY_and_varX_match_varY) {$/;"	f
+TEST	utVariable.h	/^TEST (Variable, num1_to_varZ_to_varX_and_varY_to_varX) {$/;"	f
+TEST	utVariable.h	/^TEST (Variable, num1_to_varZ_to_varY_to_varX) {$/;"	f
+TEST	utVariable.h	/^TEST (Variable, varX_match_varX_and_num1_to_varX) {$/;"	f
+TEST	utVariable.h	/^TEST (Variable, varX_to_varY_and_varZ_to_varX_and_num1_to_varZ) {$/;"	f
+TEST	utVariable.h	/^TEST (Variable, varY_to_varX_and_num1_to_varX) {$/;"	f
+TEST	utVariable.h	/^TEST (Variable, varY_to_varX_and_num1_to_varY) {$/;"	f
+TEST	utVariable.h	/^TEST (Variable, varY_to_varX_and_varW_to_varZ_and_varZ_to_varY_and_num1_to_varY) {$/;"	f
+TEST	utVariable.h	/^TEST(Variable , atom_to_varX){$/;"	f
+TEST	utVariable.h	/^TEST(Variable , matching){$/;"	f
+TEST	utVariable.h	/^TEST(Variable , numE_to_varX){$/;"	f
+TEST	utVariable.h	/^TEST(Variable, constructor){$/;"	f
+TEST_F	utParser.h	/^TEST_F( ParserTest, createTerm_StructWithStruct){$/;"	f
+TEST_F	utParser.h	/^TEST_F( ParserTest, createTerm_nestedStruct2){$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createArgs)$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_Atom)$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_DotStruct){$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_ListAsStruct) {$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_ListAsStruct2) {$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_ListOfListAndStruct){$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_Num){$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_Struct)$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_StructWithNumber) {$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_StructWithThreeTerms) {$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_StructWithTwoNumber) {$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_StructWithoutArgs) {$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_Var){$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_emptyList){$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_illeageTerm){$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_listWithTwoTerms){$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_nestedList){$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_nestedStruct)$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_nestedStruct3) {$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerm_underscoredVar)$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest, createTerms){$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest,ListOfTermsEmpty)$/;"	f
+TEST_F	utParser.h	/^TEST_F(ParserTest,listofTermsTwoNumber)$/;"	f
+TEST_F	utScanner.h	/^TEST_F (ScannerTest, position) {$/;"	f
+TEST_F	utScanner.h	/^TEST_F(ScannerTest, nextTokenAtom) {$/;"	f
+TEST_F	utScanner.h	/^TEST_F(ScannerTest, nextTokenAtomSC) {$/;"	f
+TEST_F	utScanner.h	/^TEST_F(ScannerTest, nextTokenChar) {$/;"	f
+TEST_F	utScanner.h	/^TEST_F(ScannerTest, nextTokenEOS) {$/;"	f
+TEST_F	utScanner.h	/^TEST_F(ScannerTest, nextTokenEOS2) {$/;"	f
+TEST_F	utScanner.h	/^TEST_F(ScannerTest, nextTokenNumber) {$/;"	f
+TEST_F	utScanner.h	/^TEST_F(ScannerTest, nextTokenVar) {$/;"	f
+Term	atom.h	/^  Term (string s = ""):_symbol(s) {}$/;"	f	class:Term
+Term	atom.h	/^class Term {$/;"	c
+UTATOM_H	utAtom.h	2;"	d
+UTEXP_H	utExp.h	2;"	d
+UTITERATOR_H	utIterator.h	2;"	d
+UTLIST_H	utList.h	2;"	d
+UTPARSER_H	utParser.h	2;"	d
+UTSCANNER_H	utScanner.h	2;"	d
+UTVARIABLE_H	utVariable.h	2;"	d
+VAR	global.h	/^const int VAR = 259;$/;"	v
+VARIABLE_H	variable.h	2;"	d
+Variable	variable.h	/^  Variable(string s):Term(s), _instance(0) {$/;"	f	class:Variable
+Variable	variable.h	/^class Variable : public Term {$/;"	c
+_args	struct.h	/^  std::vector<Term *> _args;$/;"	m	class:Struct
+_currentToken	parser.h	/^  int _currentToken;$/;"	m	class:Parser
+_elements	list.h	/^  vector<Term *> _elements;$/;"	m	class:List
+_expStack	parser.h	/^  stack<Exp*> _expStack;$/;"	m	class:Parser
+_inc	madRace.h	/^  int _inc;$/;"	m	class:MadBike
+_index	iterator.h	/^  int _index;$/;"	m	class:ListIterator
+_index	iterator.h	/^  int _index;$/;"	m	class:StructIterator
+_instance	variable.h	/^  Term * _instance;$/;"	m	class:Variable
+_left	exp.h	/^  Exp * _left;$/;"	m	class:ConjExp
+_left	exp.h	/^  Exp * _left;$/;"	m	class:DisjExp
+_left	exp.h	/^  Term* _left;$/;"	m	class:MatchExp
+_list	iterator.h	/^  List* _list;$/;"	m	class:ListIterator
+_maxSpeed	madRace.h	/^  int _maxSpeed;$/;"	m	class:MadBike
+_name	struct.h	/^  Atom _name;$/;"	m	class:Struct
+_right	exp.h	/^  Exp * _right;$/;"	m	class:ConjExp
+_right	exp.h	/^  Exp * _right;$/;"	m	class:DisjExp
+_right	exp.h	/^  Term* _right;$/;"	m	class:MatchExp
+_s	iterator.h	/^  Struct* _s;$/;"	m	class:StructIterator
+_scanner	parser.h	/^  Scanner _scanner;$/;"	m	class:Parser
+_speed	madRace.h	/^  int _speed;$/;"	m	class:MadBike
+_speed	madRace.h	/^  int _speed;$/;"	m	class:MadCar
+_symbol	atom.h	/^  string _symbol;$/;"	m	class:Term
+_table	parser.h	/^  map<string, Variable*> _table;$/;"	m	class:Parser
+_terms	parser.h	/^  vector<Term *> _terms;$/;"	m	class:Parser
+_tokenValue	scanner.h	/^  int _tokenValue;$/;"	m	class:Scanner
+args	list.h	/^  Term * args(int index) {$/;"	f	class:List
+args	struct.h	/^  Term * args(int index) {$/;"	f	class:Struct
+arity	list.h	/^  int arity() const {$/;"	f	class:List
+arity	struct.h	/^  int arity() const {$/;"	f	class:Struct
+boom	madRace.h	/^  void boom() {$/;"	f	class:MadBike
+boom	madRace.h	/^  void boom(int incSpeed) {_speed+=incSpeed;}$/;"	f	class:MadCar
+buffer	scanner.h	/^  string buffer;$/;"	m	class:Scanner
+buildExpression	parser.h	/^  void buildExpression(){$/;"	f	class:Parser
+conjunctionMatch	parser.h	/^  void conjunctionMatch() {$/;"	f	class:Parser
+createIterator	atom.cpp	/^Iterator * Term::createIterator(){$/;"	f	class:Term
+createIterator	list.cpp	/^Iterator * List::createIterator()$/;"	f	class:List
+createIterator	struct.cpp	/^Iterator * Struct::createIterator()$/;"	f	class:Struct
+createTail	list.h	/^  Term* createTail(std::vector<Term*> const &args){$/;"	f	class:List
+createTerm	parser.h	/^  Term* createTerm(){$/;"	f	class:Parser
+createTerms	parser.h	/^  void createTerms() {$/;"	f	class:Parser
+currentChar	scanner.h	/^  char currentChar() {$/;"	f	class:Scanner
+currentItem	iterator.h	/^  Term * currentItem() const{$/;"	f	class:NullIterator
+currentItem	iterator.h	/^  Term* currentItem() const {$/;"	f	class:ListIterator
+currentItem	iterator.h	/^  Term* currentItem() const {$/;"	f	class:StructIterator
+disjunctionMatch	parser.h	/^  void disjunctionMatch() {$/;"	f	class:Parser
+evaluate	exp.h	/^  bool evaluate() {$/;"	f	class:ConjExp
+evaluate	exp.h	/^  bool evaluate() {$/;"	f	class:DisjExp
+evaluate	exp.h	/^  bool evaluate(){$/;"	f	class:MatchExp
+extractAtom	scanner.h	/^  string extractAtom() {$/;"	f	class:Scanner
+extractAtomSC	scanner.h	/^  string extractAtomSC() {$/;"	f	class:Scanner
+extractChar	scanner.h	/^  char extractChar() {$/;"	f	class:Scanner
+extractNumber	scanner.h	/^  int extractNumber() {$/;"	f	class:Scanner
+extractVar	scanner.h	/^  string extractVar() {$/;"	f	class:Scanner
+first	iterator.h	/^  void first() {$/;"	f	class:ListIterator
+first	iterator.h	/^  void first() {$/;"	f	class:StructIterator
+first	iterator.h	/^  void first(){}$/;"	f	class:NullIterator
+getEvaluateString	exp.h	/^  string getEvaluateString(){$/;"	f	class:ConjExp
+getEvaluateString	exp.h	/^  string getEvaluateString(){$/;"	f	class:DisjExp
+getEvaluateString	exp.h	/^  string getEvaluateString(){$/;"	f	class:MatchExp
+getEvaluateString	exp.h	/^  virtual string getEvaluateString() {return "";} $/;"	f	class:Exp
+getExpressionTree	parser.h	/^  Exp* getExpressionTree(){$/;"	f	class:Parser
+getStruct	atom.h	/^  virtual Struct* getStruct() {$/;"	f	class:Term
+getStruct	struct.h	/^  Struct* getStruct() {$/;"	f	class:Struct
+getTerms	parser.h	/^  vector<Term *> & getTerms() {$/;"	f	class:Parser
+getVariable	atom.h	/^  virtual Variable* getVariable() {$/;"	f	class:Term
+getVariable	variable.h	/^  Variable* getVariable() {$/;"	f	class:Variable
+head	list.cpp	/^Term * List::head() const{$/;"	f	class:List
+isDone	iterator.h	/^  bool isDone() const {$/;"	f	class:ListIterator
+isDone	iterator.h	/^  bool isDone() const {$/;"	f	class:StructIterator
+isDone	iterator.h	/^  bool isDone() const{$/;"	f	class:NullIterator
+isSpecialCh	global.h	/^bool isSpecialCh(char c) {$/;"	f
+list	parser.h	/^  Term * list() {$/;"	f	class:Parser
+main	mainAtom.cpp	/^int main( int argc , char **argv )$/;"	f
+main	mainException.cpp	/^int main( int argc , char **argv )$/;"	f
+main	mainIterator.cpp	/^int main( int argc , char **argv )$/;"	f
+main	mainMadRace.cpp	/^int main( int argc , char **argv )$/;"	f
+main	mainScanner.cpp	/^int main( int argc , char **argv )$/;"	f
+main	mainVariable.cpp	/^int main( int argc , char **argv )$/;"	f
+match	atom.cpp	/^bool Term::match(Term & a){$/;"	f	class:Term
+match	struct.h	/^  bool match(Term &term) {$/;"	f	class:Struct
+match	variable.h	/^  bool match( Term & term ) {$/;"	f	class:Variable
+name	struct.h	/^  Atom & name() {$/;"	f	class:Struct
+next	iterator.h	/^  void next() {$/;"	f	class:ListIterator
+next	iterator.h	/^  void next() {$/;"	f	class:StructIterator
+next	iterator.h	/^  void next(){}$/;"	f	class:NullIterator
+nextToken	scanner.h	/^  int nextToken() {$/;"	f	class:Scanner
+pos	scanner.h	/^  int pos;$/;"	m	class:Scanner
+position	scanner.h	/^  int position() const {return pos;}$/;"	f	class:Scanner
+processToken	scanner.h	/^  void processToken(string const & s) {$/;"	f	class:Scanner
+restConjunctionMatch	parser.h	/^  void restConjunctionMatch() {$/;"	f	class:Parser
+restDisjunctionMatch	parser.h	/^  void restDisjunctionMatch() {$/;"	f	class:Parser
+setInput	scanner.h	/^  void setInput(string in) {buffer = in;}$/;"	f	class:Scanner
+skipLeadingWhiteSpace	scanner.h	/^  int skipLeadingWhiteSpace() {$/;"	f	class:Scanner
+speed	madRace.h	/^  int speed() const {return _speed;}$/;"	f	class:MadBike
+speed	madRace.h	/^  int speed() const {return _speed;}$/;"	f	class:MadCar
+structure	parser.h	/^  Term * structure() {$/;"	f	class:Parser
+symbol	atom.h	/^  virtual string symbol() const {return _symbol;}$/;"	f	class:Term
+symbol	list.cpp	/^string List::symbol() const{$/;"	f	class:List
+symbol	struct.h	/^  string symbol() const {$/;"	f	class:Struct
+symbolExist	global.h	/^bool symbolExist(string s, int & val) {$/;"	f
+tail	list.cpp	/^Term * List::tail() const {$/;"	f	class:List
+tokenValue	scanner.h	/^  int tokenValue() const {return _tokenValue;}$/;"	f	class:Scanner
+value	atom.h	/^  virtual string value() const {return symbol();}$/;"	f	class:Term
+value	list.cpp	/^string List::value() const{$/;"	f	class:List
+value	struct.h	/^  string value() const {$/;"	f	class:Struct
+value	variable.h	/^  string value() const {$/;"	f	class:Variable

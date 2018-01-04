@@ -11,7 +11,9 @@ using std::string;
 #include "list.h"
 #include "exp.h"
 #include <stack>
+#include <map>
 
+using std::map;
 using std::stack;
 
 class Parser{
@@ -22,7 +24,9 @@ public:
     int token = _scanner.nextToken();
     _currentToken = token;
     if(token == VAR){
-      return new Variable(symtable[_scanner.tokenValue()].first);
+      if(_table.find(symtable[_scanner.tokenValue()].first) == _table.end())
+        _table.insert(pair<string,Variable*>(symtable[_scanner.tokenValue()].first,new Variable(symtable[_scanner.tokenValue()].first)));
+      return _table[symtable[_scanner.tokenValue()].first];
     }else if(token == NUMBER){
       return new Number(_scanner.tokenValue());
     }else if(token == ATOM || token == ATOMSC){
@@ -40,8 +44,6 @@ public:
     return nullptr;
   }
 
-
-
   Term * structure() {
     Atom structName = Atom(symtable[_scanner.tokenValue()].first);
     int startIndexOfStructArgs = _terms.size();
@@ -53,7 +55,7 @@ public:
       _terms.erase(_terms.begin() + startIndexOfStructArgs, _terms.end());
       return new Struct(structName, args);
     } else {
-      throw string("unexpected token");
+      throw string("Unbalanced operator");
     }
   }
 
@@ -69,7 +71,7 @@ public:
       }
       return new List(args);
     } else {
-      throw string("unexpected token");
+      throw string("Unbalanced operator");
     }
   }
 
@@ -82,17 +84,19 @@ public:
     disjunctionMatch();
     restDisjunctionMatch();
     if (createTerm() != nullptr || _currentToken != '.')
-      throw string("expected token.");
+      throw string("Missing token '.'");
   }
 
   void restDisjunctionMatch() {
     if (_scanner.currentChar() == ';') {
+      _table.clear();
       createTerm();
       disjunctionMatch();
       Exp *right = _expStack.top();
       _expStack.pop();
       Exp *left = _expStack.top();
       _expStack.pop();
+      //std::cout<<"~~~~"<<left->getEvaluateString()<<"   "<< right->getEvaluateString()<<std::endl;
       _expStack.push(new DisjExp(left, right));
       restDisjunctionMatch();
     }
@@ -106,6 +110,11 @@ public:
   void restConjunctionMatch() {
     if (_scanner.currentChar() == ',') {
       createTerm();
+
+    if (_scanner.currentChar() == '.') {
+        throw string ("Unexpected ',' before '.'");
+    }
+
       conjunctionMatch();
       Exp *right = _expStack.top();
       _expStack.pop();
@@ -121,6 +130,14 @@ public:
     if (createTerm() == nullptr && _currentToken == '=') {
       Term * right = createTerm();
       _expStack.push(new MatchExp(left, right));
+    }
+    else if(_currentToken == '.')
+        throw string(left->symbol() +" does never get assignment");
+    else if(_currentToken != '='){
+        std::ostringstream strs;
+        strs << (char)_currentToken;
+        string _symbol = strs.str();
+        throw string("Unexpected '"+ _symbol +"' before '.'");
     }
   }
 
@@ -151,5 +168,6 @@ private:
   int _currentToken;
   //MatchExp* _root;
   stack<Exp*> _expStack;
+  map<string, Variable*> _table;
 };
 #endif

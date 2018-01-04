@@ -1,3 +1,15 @@
+#ifndef EXPRESSION_H
+#define EXPRESSION_H
+
+
+#include "atom.h"
+#include "variable.h"
+#include "global.h"
+#include "scanner.h"
+#include "struct.h"
+#include "list.h"
+#include "exp.h"
+#include "parser.h"
 
 /**
  * 
@@ -11,7 +23,8 @@ TEST(Shell, varMatchAtomSuc) {
   Parser p(s);
   try{
     p.buildExpression();
-    
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
      /**
      *  maybe your implementation here.
      */
@@ -27,7 +40,9 @@ TEST(Shell, atomMatchAtomFail) {
   Parser p(s);
   try{
     p.buildExpression();
-    
+    string result = "false.";
+    if(p.getExpressionTree()->evaluate())
+        result = "true.";
      /**
      *  maybe your implementation here.
      */
@@ -43,6 +58,8 @@ TEST(Shell, varMatchList) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -59,6 +76,7 @@ TEST(Shell, varMatchStruct) {
   Parser p(s);
   try {
     p.buildExpression();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -75,6 +93,9 @@ TEST(Shell, varMatchItself) {
   Parser p(s);
   try {
     p.buildExpression();
+    string result = "false.";
+    if(p.getExpressionTree()->evaluate())
+        result = "true.";
     
      /**
      *  maybe your implementation here.
@@ -91,6 +112,8 @@ TEST(Shell, varMachingListThatIncludeVar) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -107,6 +130,8 @@ TEST(Shell, varMachingStructThatIncludeVar) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -124,6 +149,9 @@ TEST(Shell, conjunctionMatching_false) {
   Parser p(s);
   try {
     p.buildExpression();
+    string result = "false.";
+    if(p.getExpressionTree()->evaluate())
+        result = "true.";
     
      /**
      *  maybe your implementation here.
@@ -140,6 +168,8 @@ TEST(Shell, conjunctionMatching_diffExp) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -156,6 +186,8 @@ TEST(Shell, conjunctionMatching_sameExp) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -172,6 +204,9 @@ TEST(Shell, conjunctionMatching_true) {
   Parser p(s);
   try {
     p.buildExpression();
+    string result = "false.";
+    if(p.getExpressionTree()->evaluate())
+        result = "true.";
     
      /**
      *  maybe your implementation here.
@@ -188,6 +223,8 @@ TEST(Shell, conjunctionMatching_trueAndExp) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -204,6 +241,8 @@ TEST(Shell, conjunctionMatching_expAndtrue) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -220,6 +259,9 @@ TEST(Shell, conjunctionMatching_trueAndfalse) {
   Parser p(s);
   try {
     p.buildExpression();
+    string result = "false.";
+    if(p.getExpressionTree()->evaluate())
+        result = "true.";
     
      /**
      *  maybe your implementation here.
@@ -236,6 +278,9 @@ TEST(Shell, conjunctionMatching_falseAndtrue) {
   Parser p(s);
   try {
     p.buildExpression();
+    string result = "false.";
+    if(p.getExpressionTree()->evaluate())
+        result = "true.";
     
      /**
      *  maybe your implementation here.
@@ -252,6 +297,9 @@ TEST(Shell, conjunctionMatching_falseAndfalse) {
   Parser p(s);
   try {
     p.buildExpression();
+    string result = "false.";
+    if(p.getExpressionTree()->evaluate())
+        result = "true.";
     
      /**
      *  maybe your implementation here.
@@ -268,6 +316,8 @@ TEST(Shell, conjunctionMatching_duplicateExp) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -284,6 +334,8 @@ TEST(Shell, disjunctionMatching1) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -300,6 +352,8 @@ TEST(Shell, disjunctionMatching2) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -316,6 +370,8 @@ TEST(Shell, disjunctionMatching3) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -332,6 +388,8 @@ TEST(Shell, disjunctionMatching4) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -348,6 +406,8 @@ TEST(Shell, disjunctionMatching5) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -364,6 +424,8 @@ TEST(Shell, disjunctionMatching6) {
   Parser p(s);
   try {
     p.buildExpression();
+    p.getExpressionTree()->evaluate();
+    string result = p.getExpressionTree()->getEvaluateString()+".";   
     
      /**
      *  maybe your implementation here.
@@ -376,7 +438,7 @@ TEST(Shell, disjunctionMatching6) {
 }
 
 
-TEST(Shell, exceptionMissingPeriodToken) {
+TEST(Shell, exceptionMissingPeriodToken2) {
   Scanner s("X=1");
   Parser p(s);
   try {
@@ -391,3 +453,4 @@ TEST(Shell, exceptionMissingPeriodToken) {
     ASSERT_EQ("Missing token '.'", msg);
   }
 }
+#endif
