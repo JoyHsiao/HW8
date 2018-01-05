@@ -9,7 +9,7 @@ endif
 
 shell: shell.o shell.h atom.o list.o struct.o scanner.h parser.h                                 
 ifeq (${OS}, Windows_NT)                                                                   
-	g++ -g3 -o shell shell.o atom.o list.o struct.o -lgtest -lpthread           
+	g++ -g3 -o shell shell.o atom.o list.o struct.o -lgtest           
 else                                                                                       
 	g++ -g3 -o shell shell.o atom.o list.o struct.o -lgtest -lpthread -lpthread 
 endif                                                                                      
