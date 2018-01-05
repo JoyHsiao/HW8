@@ -19,9 +19,9 @@ atom.o: atom.cpp atom.h variable.h
 
 
 list.o:list.cpp list.h
-		g++ -std=gnu++0x -c list.cpp
+	g++ -std=gnu++0x -c list.cpp
 struct.o:struct.cpp struct.h
-		g++ -std=gnu++0x -c struct.cpp
+	g++ -std=gnu++0x -c struct.cpp
 
 hw8.o: hw8.cpp scanner.h atom.h struct.h variable.h parser.h exception.h expression.h
 	g++ -std=gnu++0x -c hw8.cpp
