@@ -30,6 +30,11 @@ shell.o: scanner.h atom.h struct.h variable.h parser.h exception.h expression.h
 	g++ -std=gnu++0x -c shell.cpp
 
 clean:
-	rm -f *.o madRace utAtom utVariable utScanner utIterator hw8 shell
+ifeq (${OS}, Windows_NT)
+	del *.o hw8 shell
+else                    
+	rm -f *.o hw8 shell
+endif                   
+
 stat:
 	wc *.h *.cpp
