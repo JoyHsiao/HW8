@@ -65,7 +65,7 @@ public:
         if(left[i] == ','){
             split.push_back(temp);
             index = 0;
-            //temp[i] = '\0';
+            temp[index] = '\0';
         }
         else if(left[i]!=' '){
                 temp[index] = left[i];
